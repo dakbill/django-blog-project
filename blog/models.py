@@ -7,7 +7,6 @@ class Post(models.Model):
     body = models.TextField()
     created = models.DateField()
     updated = models.DateField()
-
 class Comment(models.Model):
     
     body = models.TextField()
@@ -15,8 +14,9 @@ class Comment(models.Model):
     created = models.DateField()
     updated = models.DateField()
     post = models.ForeignKey(Post,related_name='post')
-
-
+#class CommentAdmin:
+	
+#class CommentInLine:
 
 admin.site.register(Post)
 admin.site.register(Comment)
