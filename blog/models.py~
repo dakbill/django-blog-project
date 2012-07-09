@@ -14,11 +14,15 @@ class Comment(models.Model):
     created = models.DateField()
     updated = models.DateField()
     post = models.ForeignKey(Post,related_name='post')
-class PostAdmin(Post):
-	page=[title,created,updated]
-#class CommentAdmin:
-	
-#class CommentInLine:
+class PostAdmin(admin.ModelAdmin):
+    list_display=('title','created','updated')
+    search=('title','body')
+    list_filter=('title','created')
 
-admin.site.register(Post)
-admin.site.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    list_display=('post','author','body','created','updated')
+    list_filter=('author','created')
+class CommentInline(admin.TabularInline):
+    model=Comment
+admin.site.register(Post,PostAdmin)
+admin.site.register(Comment,CommentAdmin)
