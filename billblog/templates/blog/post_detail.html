@@ -1,0 +1,20 @@
+{% extends 'blog/base.html'%}
+{%block content%}
+<a href="/blog/posts/{{post.id }}/True"><!-- this is the worst, but simplest way to link to the specific post.
+                                                     Read the document mentioned in the instructions for more info-->
+	{%for comment in comments %}
+	  <ul>
+	  	<li>
+	  	comment:{{comment.body}}
+	  	</li>
+	  	By:{{comment.author}}
+	  	<li>
+	  	date created:{{comment.created}}
+	  	</li>
+	  	<li>
+	  	updated:{{comment.updated}}
+	  	</li>
+	 </ul>
+	{%endfor%}
+		</a>
+{%endblock%}		

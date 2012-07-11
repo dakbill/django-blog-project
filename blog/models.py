@@ -5,6 +5,10 @@ class Post(models.Model):
     body = models.TextField()
     created = models.DateField()
     updated = models.DateField()
+    def body_first_60(self):
+      return self.body[:60]
+    def __unicode__(self):
+        return self.title
 class Comment(models.Model):
     body = models.TextField()
     author = models.CharField(max_length=60)
