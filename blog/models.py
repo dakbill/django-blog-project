@@ -1,10 +1,12 @@
 from django.db import models
 from django.contrib import admin
+import datetime
 class Post(models.Model):
     title = models.CharField(max_length=60)
     body = models.TextField()
-    created = models.DateField()
-    updated = models.DateField()
+    created = models.DateField(auto_now_add=True)
+    updated = models.DateField(auto_now=True)
+    
     def body_first_60(self):
       return self.body[:60]
     def __unicode__(self):
@@ -12,8 +14,8 @@ class Post(models.Model):
 class Comment(models.Model):
     body = models.TextField()
     author = models.CharField(max_length=60)
-    created = models.DateField()
-    updated = models.DateField()
+    created = models.DateField(auto_now_add=True)
+    updated = models.DateField(auto_now=True)
     post = models.ForeignKey(Post,related_name='post')
 class PostAdmin(admin.ModelAdmin):
     list_display=('title','created','updated')

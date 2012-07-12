@@ -2,6 +2,11 @@
 {%block content%}
 <a href="/blog/posts/{{post.id }}/True"><!-- this is the worst, but simplest way to link to the specific post.
                                                      Read the document mentioned in the instructions for more info-->
+	<ul>
+	  	<li>
+	  	Post:{{wanted_post.body}}
+	  	</li>
+	</ul>
 	{%for comment in comments %}
 	  <ul>
 	  	<li>
@@ -17,4 +22,12 @@
 	 </ul>
 	{%endfor%}
 		</a>
-{%endblock%}		
+<h3>New comment:</h3>
+<div>
+<form method='post' action="">
+{{form.as_p}}
+<input type='submit' name='Submit'>
+</form>
+</div>	
+{%endblock%}	
+
