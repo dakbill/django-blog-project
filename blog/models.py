@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib import admin
-import datetime
 class Post(models.Model):
     title = models.CharField(max_length=60)
     body = models.TextField()

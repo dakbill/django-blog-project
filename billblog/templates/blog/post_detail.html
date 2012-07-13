@@ -4,13 +4,14 @@
                                                      Read the document mentioned in the instructions for more info-->
 	<ul>
 	  	<li>
-	  	Post:{{wanted_post.body}}
+	  	<h1>{{wanted_post.title}}</h1><br>
+	  	{{wanted_post.body}}<br>
 	  	</li>
 	</ul>
 	{%for comment in comments %}
 	  <ul>
 	  	<li>
-	  	comment:{{comment.body}}
+	  	comment:<br>{{comment.body}}
 	  	</li>
 	  	By:{{comment.author}}
 	  	<li>

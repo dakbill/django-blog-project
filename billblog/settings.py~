@@ -104,7 +104,7 @@ ROOT_URLCONF = 'billblog.urls'
 WSGI_APPLICATION = 'billblog.wsgi.application'
 
 TEMPLATE_DIRS = (
-    		os.path.join(SITE_ROOT,’templates’),
+    		os.path.join(SITE_ROOT,'templates'),
 
 )
 

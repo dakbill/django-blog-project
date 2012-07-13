@@ -14,8 +14,8 @@ class Post(models.Model):
 class Comment(models.Model):
     body = models.TextField()
     author = models.CharField(max_length=60)
-    created = models.DateField()
-    updated = models.DateField()
+    created = models.DateField(auto_now_add=True)
+    updated = models.DateField(auto_now=True)
     post = models.ForeignKey(Post,related_name='post')
 class PostAdmin(admin.ModelAdmin):
     list_display=('title','created','updated')

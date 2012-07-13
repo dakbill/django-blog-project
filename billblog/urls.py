@@ -9,6 +9,7 @@ urlpatterns = patterns('',
     # url(r'^$', 'billblog.views.home', name='home'),
     # url(r'^billblog/', include('billblog.foo.urls')),
       url(r'^blog/',include('blog.urls')),
+      url(r'^reg/',include('reg.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
      url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
